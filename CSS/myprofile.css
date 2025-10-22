@@ -8,6 +8,8 @@ header{
     background-color: aqua;
 }
 
+/* . is class selector, it allows us to select all tags with the same 
+class value */
 .zurra-pal-kcurra{
     border: 10px;
     border-style: solid;
@@ -27,14 +29,29 @@ section>h1{
 .sobre-mi-columna-1{
     background-color: dimgrey;
     width: 40%;
+    /* make all the elements inside a container float to the left forming 
+    a line */
     float: left;
     border: 7px;
     border-style: dashed;
     border-color: black;
     border-radius: 50px;
+    /* create space between elements */
+    margin: 10px;
+    /* create space between an element and its border */
     padding: 30px;
 }
 
+/* > is used to select children of a parent element, in this 
+case, the parent element is "section" while the children is all 
+its "h1" child */
+section>h1{
+    background-color: beige;
+    text-align: center;
+}
+
+/* # + id of an element to select a unique element
+# is css id selector */
 #sobre-mi-21{
     background-color: gold;
 }
@@ -44,7 +61,8 @@ section>h1{
 }
 
 section{
-    clear: left;
+    /*Remove the effects caused by "float" from other elements */
+    clear: both;
     padding: 20px;
 }
 
@@ -56,6 +74,8 @@ section{
     border: 3px solid black;
     height: 200px;
     text-align: center;
+    border-radius: 35px;
+    margin: 0.8px;
 }
 
 .cuadrado4{
@@ -68,4 +88,83 @@ section{
     background: url(../HTML/KTM.jpeg);
     background-size: cover;
     background-position: center;
+}
+
+footer{
+    clear: both;
+}
+
+.footer-icon{
+    width: 50px;
+    height: 50px;
+}
+
+.tabla-1{
+    width: 100%;
+    padding-left: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    border-collapse: collapse;
+}
+
+#experience-section>.tabla-1{
+    width: 100%;
+    /* padding-left: 100px; */
+   
+    padding-top: 50px;
+    padding-bottom: 40px;
+    
+    /* make the children borders collapse */
+    border-collapse: collapse;
+}
+
+
+/* The ::before pseudo-element is an inline box generated as an immediate child 
+of the element it is associated with, or the "originating element". 
+It is often used to add cosmetic content to an element via the content property, 
+such as icons, quote marks, or other decoration. 
+We use this command to create a child element as the parent element's first child */
+#projects-section>div:nth-child(odd)::before {
+	background-image: url('../HTML/papa.jpg');
+	background-size: cover;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	opacity: 0.2;
+    /* It is necessary to put an empty content */
+    content: "";
+}
+
+
+/*
+Sellect all odd child elements of a type
+:nth-child (odd) is used select all odd children elements of a type
+:nth-child (even) i used to select al even children elements of a type
+*/
+tr:nth-child(odd){
+    background-color: rgb(148, 246, 211);
+}
+
+td{
+    border-style: solid;
+    border-color: black;
+    border-width: 0,4px;
+    text-align: center;
+    padding: 50px;
+}
+
+.footer-right{
+    float: right;
+}
+.footer-left{
+    float: left;
+}
+
+a:hover{
+    font-size: 50px;
 }
