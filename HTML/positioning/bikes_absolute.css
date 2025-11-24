@@ -1,0 +1,61 @@
+*{    
+    font-family: fantasy;
+    /*
+    in order to make our text more responsive to size change of the viewport,
+    we have to use a relative unit not absolute unit like px.
+    In this case, we use the viewport as our unified reference.
+    2vw is iqual to 2% of the width of the viewport
+    vw stands for viewport width
+    */
+    font-size: 1.25vw;
+    background-color:rgb(48, 230, 160);
+}
+
+div{
+    border: 5px solid black;
+    border-radius: 15px;
+    box-shadow: rgb(0, 132, 255) 8px 8px;
+    padding: 10px;
+    margin: 1vw;
+    transition: transform 0.3s ease;
+    width: fit-content;
+    position: relative;
+    padding: 1rem;
+}
+
+div:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px 20px white;
+}
+
+h2{
+    background-color: chartreuse;
+    border: 2px solid black;
+    width: fit-content;
+    position: sticky;
+    padding: 4px;
+    /*
+    The following four parameters are used to control the 
+    position of this element with respect to the viewport
+    */
+    /*
+    The position of the top border of this element relative to the viewport
+    */
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: auto;
+}
+
+.bikes-foto{
+    width: 5vw;
+    border-radius: 0.5vw;
+    /* The absolute positioning remove the element from uts normal flow on the page,
+    the browser then looks for it the closest superior container wich is non static,
+    if there is no such parent element, the html element will be selected as its container element. */
+    position: absolute;
+    /* Use the following attributes to determine the absolute positioning element's 
+    position relative to its closest non static container */
+    top: 1vw;
+    right: 1vw;
+}
