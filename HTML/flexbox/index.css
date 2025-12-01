@@ -1,0 +1,9 @@
+*{
+    font-family: monospace;
+    font-size: xx-large;
+}
+
+.logo{
+    max-width: 10vw;
+    min-width: 5vw;
+}
