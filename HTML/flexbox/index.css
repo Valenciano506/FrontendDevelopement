@@ -1,6 +1,7 @@
 *{
     font-family: monospace;
     font-size: xx-large;
+    border: 3px, solid, black;
 }
 
 .logo{
@@ -9,8 +10,7 @@
 }
 
 /* > is direct child selector */
-nav>ul{
-    border: 3px, solid, black;
+nav>ul{   
     list-style: none;
     /* "display" is a property used to organize a group of elements */
     /* "flex" is a one dimensional display style, wich ditribute the elements 
@@ -21,8 +21,15 @@ nav>ul{
     /* Choose the way to distribute the flex items along the main axis */
     /* center / flex-start / flex-end / space-around / space-evenly / space-between */
     justify-content: space-around;
+    /* This property is used to align the group of flex items along the cross axis */
+    align-items: center;
+    /* We use this attribute to control how the elements are shown when they surpass
+    the width of the container. "nowrap" means the elements can overflow the edge of
+    the container */
+    flex-wrap: wrap;
 }
 
 nav>ul>a{
     margin: 3vw;
+    width: 10vw;
 }
