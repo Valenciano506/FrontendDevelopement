@@ -4,3 +4,6 @@
 
 const timerDisplay = document.getElementById("timerDisplay");
 console.debug(timerDisplay);
+const startBtn = document.getElementById("startBtn");
+const stopBtn = document.getElementById("stopBtn");
+const resetBtn = document.getElementById("resetBtn");
