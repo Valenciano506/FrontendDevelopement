@@ -10,6 +10,9 @@ const resetBtn = document.getElementById("resetBtn");
 console.log(startBtn);
 console.log(stopBtn);
 console.log(resetBtn);
+
+document.querySelectorAll(".control-button");
+
 //change the font size of the timer label using js
 timerDisplay.style.fontSize = "40px";
 
@@ -72,3 +75,7 @@ for (let i = 0; i < 50; i++){
     x--;
 }
 }
+
+const btns = document.querySelectorAll(".control-button");
+console.log(btns);
+btns.forEach(e => {});
