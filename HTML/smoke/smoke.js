@@ -24,6 +24,14 @@ class Smoke{
         console.log(smoke.particles);
     }
 
+    animate(){
+        for (let index = 0; index < this.particles.length; index++) {
+            //Update the states of the particle and draw it to the screen
+            this.particles[index].update();            
+        }
+        requestAnimationFrame(animate);
+    }
+
 }
 
 class Particles{
@@ -32,25 +40,35 @@ class Particles{
         this.color = '#23a';
         this.speedX = Math.random() * 2 + min_speed_x;
         this.speedY = Math.random() * 2 + min_speed_y;
-        this.X = x;
-        this.Y = y;
+        this.X = Math.random() * 2 + x;
+        this.Y = Math.random() * 2 + y;
     }
 
     //Update the current state of a particle
     update(){
         this.size -= 1;
         //this.size = this.size - 1;
+
+        this.draw();
     }
 
     draw(){
-
+        //Define the color that we want to use for our drawings
+        ctx.fillStyle = this.color;
+        //Prepare to draw a path
+        ctx.beginPath();
+        //Draw an arc
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        //Fill the object that we have drawn
+        ctx.fill();
     }
 
 }
 
 //Create a smoke object
 const smoke = new Smoke();
-window.addEventListener('mousemove', (e)=>{
+console.log(smoke);
+window.addEventListener('mousedown', (e)=>{
     console.log(e);
     console.log(e.clientX);
     console.log(e.clientY);
@@ -59,6 +77,8 @@ window.addEventListener('mousemove', (e)=>{
     for (let index = 0; index < min_particle_size; index++) {
         const particle = new Particles(e.clientX, e.clientY);
         smoke.add(particle);
-    }
-    
+        console.log(smoke.particles);
+    }    
 });
+
+smoke.animate();
