@@ -6,13 +6,21 @@ const canvas = document.getElementById("smoke_canvas");
 console.log(canvas);
 const ctx = canvas.getContext("2d");
 //Define the color that we want to use for our drawings
-ctx.fillStyle = 'rgb(255, 0, 0)';
+//ctx.fillStyle = 'rgb(255, 0, 0)';
 //Prepare to draw a path
-ctx.beginPath();
+//ctx.beginPath();
 //Draw an arc
-ctx.arc(2, 3, 2, 0, Math.PI * 2);
+//ctx.arc(2, 3, 2, 0, Math.PI * 2);
 //Fill the object that we have drawn
-ctx.fill();
+//ctx.fill();
+//Ensure canvas covers the screen inmediately
+function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+window.dispatchEvent(new Event('resize'));
+resize();
 
 class Smoke{
     constructor(){
@@ -52,6 +60,8 @@ class Particles{
     //Update the current state of a particle
     update(){
         this.size -= 0.1;
+        this.x += this.speedX;
+        this.y += this.speedY;
         //this.size = this.size - 1;
 
         this.draw();
